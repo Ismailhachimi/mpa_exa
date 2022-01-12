@@ -57,6 +57,7 @@ Exemple d'opérations appliquées à l'objet User d'utilisateur natif de Django.
 >>> User.objects.filter(email__contains=".fr")  
 ```
 
+# Premières étapes
 ## Créer un premier modèle
 Créer un nouveau manager d'utilisateur, ce qui est la classe qui permet à Django de gérer le modèle.
 
@@ -116,3 +117,22 @@ Afin d'utiliser le nouveau modèle d'utilisateur, nous avons l'importer directem
     ).save()
 ```
 
+# API de l'application `account`
+Dans cette section, nous allons créer le répértoire `api` pour :
+* `serializers.py` : 
+    
+    Les sérialiseurs fonctionnent de manière très similaire aux classes Form et ModelForm de Django.
+    
+    Ils permettent de convertir des données complexes telles que des querysets et des instances de modèle, en types de données Python natifs
+
+* `views.py` : 
+
+    Les `ViewSets` permettent d'avoir la logique d'un groupe de vues dans la même classe.
+
+* `permissions.py` : 
+
+    Les permissions regroupent la logique d'authentification et d'autorisation sous forme de classes réutilisables pour vérifier et valider l'identité et les droits.
+
+## Sérialiseurs
+
+à suivre
