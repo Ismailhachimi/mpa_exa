@@ -13,8 +13,8 @@ https://docs.djangoproject.com/en/3.2/ref/settings/
 from pathlib import Path
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
-BASE_DIR = Path(__file__).resolve().parent.parent
-
+CONF_DIR = Path(__file__).resolve().parent.parent
+BASE_DIR = CONF_DIR.parent
 
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/3.2/howto/deployment/checklist/
@@ -23,7 +23,7 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = 'django-insecure-yzv^qr#*4ais57i8=4kzv@u(f1$bv8rq#-a0usmk6-_$*now0y'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = False
+DEBUG = True
 
 ALLOWED_HOSTS = ['0.0.0.0']
 
@@ -39,10 +39,9 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
 
     'corsheaders',
-
     'rest_framework',
     'accounts',
-    'events',
+    'events'
 ]
 
 AUTH_USER_MODEL = 'accounts.User'
@@ -51,7 +50,7 @@ REST_FRAMEWORK = {
     'DEFAULT_PAGINATION_CLASS': 'rest_framework.pagination.PageNumberPagination',
     'PAGE_SIZE': 10,
     'DEFAULT_AUTHENTICATION_CLASSES': [
-        'accounts.services.api.verify.JWTAuthentication',
+        'accounts.services.verify.JWTAuthentication'
     ]
 }
 
@@ -71,7 +70,7 @@ MIDDLEWARE = [
 CORS_ALLOW_CREDENTIALS = False
 CORS_ORIGIN_WHITELIST = []
 
-ROOT_URLCONF = 'mpa_exa.urls'
+ROOT_URLCONF = 'conf.urls'
 
 TEMPLATES = [
     {
@@ -89,7 +88,7 @@ TEMPLATES = [
     },
 ]
 
-WSGI_APPLICATION = 'mpa_exa.wsgi.application'
+WSGI_APPLICATION = 'conf.wsgi.application'
 
 
 # Database

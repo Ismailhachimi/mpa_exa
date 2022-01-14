@@ -187,3 +187,8 @@ $ docker rmi <image-id>
 ```
 
 À noter que dans notre cas, le docker est disponible depuis `0.0.0.0:8000`.
+
+# Notes
+You can use `example_local.py` as a local settings file by renaming it to `local.py`.
+
+`prod.py` can be used by renaming it to `local.py` in a deployment pipeline. Make sure to have a pre-prod environment to test it (locally on in that environment).
