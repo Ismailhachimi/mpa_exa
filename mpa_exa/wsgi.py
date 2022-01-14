@@ -1,5 +1,5 @@
 """
-WSGI config for mpa_exa project.
+WSGI config for toteneo project.
 
 It exposes the WSGI callable as a module-level variable named ``application``.
 
@@ -11,6 +11,6 @@ import os
 
 from django.core.wsgi import get_wsgi_application
 
-os.environ.setdefault('DJANGO_SETTINGS_MODULE', 'mpa_exa.settings')
+os.environ.setdefault('DJANGO_SETTINGS_MODULE', 'mpa_exa.settings.local')
 
 application = get_wsgi_application()

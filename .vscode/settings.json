@@ -1,0 +1,19 @@
+{
+    "python.pythonPath": "./env/bin/python",
+    "[python]": {
+        "editor.formatOnSave": true
+    },
+    "files.associations": {
+        "**/templates/*.html": "django-html",
+        "**/templates/*": "django-txt",
+        "**/requirements{/**,*}.{txt,in}": "pip-requirements"
+    },
+    "editor.renderIndentGuides": false,
+    "editor.wordWrap": "off",
+    "diffEditor.wordWrap": "off",
+    "workbench.colorCustomizations": {
+        // ...
+        "editor.lineHighlightBorder": "#9fced11f",
+        "editor.lineHighlightBackground": "#1073cf2d"
+    }
+}

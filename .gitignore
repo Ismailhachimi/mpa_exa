@@ -1,7 +1,13 @@
-**/env/**
-**/__pycache__/**
+**/env/
+
+**/__pycache__/
+
 **/*.sqlite3
 
 **/migrations/**
 
+media/*
+
 .DS_Store
+
+mpa_exa/settings/local.py

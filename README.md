@@ -133,6 +133,57 @@ Dans cette section, nous allons créer le répértoire `api` pour :
 
     Les permissions regroupent la logique d'authentification et d'autorisation sous forme de classes réutilisables pour vérifier et valider l'identité et les droits.
 
-## Sérialiseurs
+##  Plus de détails ? 
+Voir le code 
 
-à suivre
+# Conteneuriser son application
+Un Dockerfile est un fichier texte qui contient des instructions sur la façon dont l'image Docker sera construite. Un Dockerfile contient les directives ci-dessous.
+
+* **FROM** : la directive définit l'image de base à partir de laquelle le conteneur Docker sera construit.
+* **WORKDIR** : la directive définit le répertoire de travail dans l'image créée.
+* **RUN** : la directive exécute les commandes dans le conteneur.
+* **COPY** : la directive copie les fichiers du système de fichiers dans le conteneur.
+* **CMD** : la directive définit les commandes exécutables dans le conteneur.
+
+## Construction de l'image Docker
+
+Pour construire l'image Docker à partir du Dockerfile que nous avons créé :
+```shell
+$ docker build --tag mpa_exa:latest .
+```
+
+Pour afficher les images Docker disponible sur notre machine :
+```shell
+$ docker image ls
+```
+
+## Création et exécution du conteneur Docker
+
+Pour construire et exécuter un conteneur Docker à partir de l'image Docker que nous avons créée :
+```shell
+$ docker run --name mpa_exa -d -p 8000:8000 mpa_exa:latest
+```
+
+Pour lister tous les conteneurs Docker en cours d'exécution :
+```shell
+$ docker container ps
+```
+
+## Arrêt de conteneur et suppression de ce dernier et l'image
+
+Pour arrêter un conteneur :
+```shell
+$ docker stop <container-id>
+```
+
+Pour supprimer un conteneur
+```shell
+$ docker rm <container-id>
+```
+
+Pour supprimer une image
+```shell
+$ docker rmi <image-id>
+```
+
+À noter que dans notre cas, le docker est disponible depuis `0.0.0.0:8000`.
